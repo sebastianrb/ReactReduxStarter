@@ -1,8 +1,11 @@
 import React from 'react';
-import "../styles/component.css";
+//connect to redux
+import { connect } from "react-redux";
+
+import "../styles/component.scss";
 import classNames from "classnames";
 
-export default class TestComponent extends React.Component {
+class TestComponent extends React.Component {
 
   constructor(props) {
     super(props);
@@ -21,6 +24,9 @@ export default class TestComponent extends React.Component {
     }
 
     console.log(this.state.active);
+
+    //console log redux state
+    console.log("Data state: ", this.props.data);
   }
 
   render() {
@@ -41,3 +47,14 @@ export default class TestComponent extends React.Component {
     );
   }
 }
+
+//connect to redux
+
+function mapStateToProps(state) {
+    return {
+      data: state.data
+    }
+}
+
+export default connect(mapStateToProps)(TestComponent);
+

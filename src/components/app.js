@@ -2,6 +2,7 @@ import "../styles/main.scss";
 import React, {Component} from "react";
 import ReactDOM from "react-dom";
 import TestComponent from "./component";
+import SaveData from "./component_two";
 
 //create a new component. This component should generate HTML
 export default class App extends Component {
@@ -14,8 +15,9 @@ export default class App extends Component {
     render() {
         return (
             <div>
-               React is working! Merp a lerp
+               React and Redux are working! Happy day.
                <TestComponent />
+               <SaveData />
             </div>
         )
     }
